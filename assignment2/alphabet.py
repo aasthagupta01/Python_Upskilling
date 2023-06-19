@@ -16,22 +16,25 @@ class SmallerAlphabet(Exception):
     pass
 
 
-try:
-    print("predefined letter is :", randomLetter)
-    if alphabet > randomLetter:
-        raise GreaterAlphabet
+def guess_letter(letter: str):
 
-    elif alphabet < randomLetter:
-        raise SmallerAlphabet
 
-    else:
-        print("you guessed the right alphabet")
+    try:
+        print("predefined letter is :", randomLetter)
+        if alphabet > randomLetter:
+            raise GreaterAlphabet
 
-except SmallerAlphabet:
-    print("Exception occured: Smaller alphabet entered")
+        elif alphabet < randomLetter:
+            raise SmallerAlphabet
 
-except GreaterAlphabet:
-    print("Exception occured: Greater alphabet entered")
+        else:
+            print("you guessed the right alphabet")
 
-finally:
-    print("you entered", alphabet)
+    except SmallerAlphabet:
+        print("Exception occured: Smaller alphabet entered")
+
+    except GreaterAlphabet:
+        print("Exception occured: Greater alphabet entered")
+
+    finally:
+        print("you entered", alphabet)

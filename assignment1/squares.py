@@ -1,11 +1,13 @@
-# printing list of squares using for loop
+# printing list of squares
 
-list_of_num = [1, 2, 3, 4, 5]
-squares = []
-for num in list_of_num:
-    squares.append(num ** 2)
-print(squares)
+def squares() -> list:
+    list_of_squares = []
+    num = int(input("enter number of elements you want to enter"))
+    for i in range(num):
+        element = int(input("enter element into list"))
+        list_of_squares.append(element ** 2)
+    return list_of_squares
 
-'''printing list of squares using list comprehensions'''
-list_of_square = [var ** 2 for var in range(1, 6)]
-print(list_of_square)
+
+print("list of squares of elements is", squares())
+

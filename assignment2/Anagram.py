@@ -1,10 +1,13 @@
 import random
-
+"""created a list of words whose anagrams are present"""
 words = ['race', 'heart', 'listen', 'loop', 'sore']
 
+"""randomly choosing a word from list of anagrams"""
 anagram = random.choice(words)
 length = len(anagram)
 print("the word is :", anagram)
+
+"""used length as limited number of chances"""
 print("you have", length, "number of chances")
 
 for i in range(1, length + 1):
