@@ -1,24 +1,15 @@
 import random
 import string
 
-# generates a random letter form a-z
-randomLetter = random.choice(string.ascii_letters)
-alphabet = input("guess the predefined alphabet:")
-
-
 class GreaterAlphabet(Exception):
     """entered alphabet is greater than predefined alphabet"""
     pass
-
 
 class SmallerAlphabet(Exception):
     """entered alphabet is smaller than predefined alphabet"""
     pass
 
-
-def guess_letter(letter: str):
-
-
+def guess_letter(alphabet: str):
     try:
         print("predefined letter is :", randomLetter)
         if alphabet > randomLetter:
@@ -36,5 +27,9 @@ def guess_letter(letter: str):
     except GreaterAlphabet:
         print("Exception occured: Greater alphabet entered")
 
-    finally:
-        print("you entered", alphabet)
+    return
+
+if __name__ == "__main__":
+    randomLetter = random.choice(string.ascii_letters)
+    alphabet = input("guess the predefined alphabet:")
+    guess_letter(alphabet)

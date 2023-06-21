@@ -1,19 +1,19 @@
-def sum_of_primes(num):
-    sum = 0
-    for i in range(2, num + 1):
+def prime_numbers(input_num: int) -> list:
+    list_of_primes = []
+    for num in range(2, input_num + 1):
         count = 0
-        for j in range(2, i):
-            if i % j == 0:
+        for j in range(2, num):
+            if num % j == 0:
                 count += 1
-
             else:
-
                 continue
         if count == 0:
-            sum += i
+            list_of_primes.append(num)
         else:
             continue
 
-    return sum
+    return list_of_primes
 
-print("sum is:", sum_of_primes(200000))
+if __name__ == "__main__":
+    prime_nums = prime_numbers(100)
+    print(f"sum is: {sum(prime_nums)}")

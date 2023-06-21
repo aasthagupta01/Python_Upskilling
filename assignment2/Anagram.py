@@ -1,21 +1,23 @@
 import random
+
 """created a list of words whose anagrams are present"""
-words = ['race', 'heart', 'listen', 'loop', 'sore']
+def give_word_for_anagram() -> str:
+    words = ['race', 'heart', 'listen', 'loop', 'sore']
+    # randomly choosing a word from list of anagrams
+    anagram = random.choice(words)
+    return anagram
 
-"""randomly choosing a word from list of anagrams"""
-anagram = random.choice(words)
-length = len(anagram)
-print("the word is :", anagram)
+def guess_anagram(anagram: str):
+    for num in range(1, len(anagram) + 1):
+        guess_word = input("guess an anagram for the word")
+        if sorted(anagram) == sorted(guess_word):
+            print(f"You guessed it RIGHT! {guess_word} is anagram of {anagram}")
+            break
+        else:
+            print(f"You guessed it WRONG! You have now {len(anagram) - num} chances left")
 
-"""used length as limited number of chances"""
-print("you have", length, "number of chances")
-
-for i in range(1, length + 1):
-    guess_word = input("guess an anagram for the word")
-
-    if sorted(anagram) == sorted(guess_word):
-        print("You guessed it RIGHT!", guess_word, "is anagram of", anagram)
-        break
-
-    else:
-        print("You guessed it WRONG! You have now", length - i, "chances left")
+if __name__ == "__main__":
+    anagram = give_word_for_anagram()
+    print("give anagram for word:",anagram)
+    print("you have", len(anagram), "number of chances")
+    guess_anagram(anagram)
