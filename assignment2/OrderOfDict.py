@@ -1,23 +1,46 @@
-input_dict = {}
-num = int(input("enter how many key value pairs you want to enter:"))
+import collections
+class OrderedDict:
+    def __init__(self):
+        self.dict = {}
+        self.keys = []
 
-for i in range(num):
-    key = input("enter a key:")
-    value = input("enter a value")
-    input_dict[key] = value
+    def insert(self, key, value):
+        if key not in self.dict:
+            self.keys.append(key)
+            self.dict[key] = value
 
-# converting dictionary into list to perform sorting
-list_of_dict = list(input_dict)
+    def delete(self, key):
+        if key in self.dict:
+            self.keys.remove(key)
+            del self.dict[key]
+        else:
+            return "key not in dictionary"
 
-# sorting the list of keys of dictionary
-list_of_dict.sort()
+    def get(self, key):
+        return self.dict.get(key)
 
-# converting sorted list back to dictionary by method 1
-sorted_dict = {}
-for keys in list_of_dict:
-    sorted_dict[keys] = input_dict[keys]
-print(sorted_dict)
+    def get_ordered_keys(self):
+        return self.keys
 
-# converting sorted list back to dictionary by method 2
-sorted_dict = {i: input_dict[i] for i in list_of_dict}
-print(sorted_dict)
+    def get_ordered_values(self):
+        return [self.dict[key] for key in self.keys]
+
+    def display(self):
+        return self.dict
+
+if __name__ == "__main__":
+    input_dict = OrderedDict()
+    input_dict.insert('a', 1)
+    input_dict.insert('b', 2)
+    input_dict.insert('c', 3)
+    input_dict.insert('d', 4)
+    print(f"dictionary is {input_dict.display()}") #print the dictionary
+
+    value1 = input_dict.get('a')
+    print(value1) #print value of a specific key
+    input_dict.delete('c')    #deleting a key
+
+    ordered_keys = input_dict.get_ordered_keys()
+    ordered_values = input_dict.get_ordered_values()
+    print(ordered_keys)
+    print(ordered_values)
