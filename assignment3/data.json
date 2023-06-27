@@ -1,0 +1,17 @@
+{
+    "firstName": "Aastha",
+    "lastName": "Gupta",
+    "occupation": "singer",
+    "country": "new york",
+    "age": "25",
+    "children": [
+        {
+            "firstName": "Alice",
+            "age": 6
+        },
+        {
+            "firstName": "Bob",
+            "age": 8
+        }
+    ]
+}
