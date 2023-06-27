@@ -3,7 +3,6 @@ import ValidateCreditCard
 
 
 class TestValidateCreditCard(unittest.TestCase):
-
     def test_validate_credit_card(self):
         card_num = ValidateCreditCard.validate_credit_card_num("4321-5674-4908-7890")
         self.assertEqual(card_num, f"{'4321-5674-4908-7890'} is valid")

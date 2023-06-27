@@ -1,5 +1,3 @@
-# alphanumeric_string = input("enter the alphanumeric string")
-
 """Program to sort the string with alphanumeric characters only(With Unit test cases). Sorting requires:
 ► All sorted lowercase letters are ahead of uppercase letters.
 ► All sorted uppercase letters are ahead digits.

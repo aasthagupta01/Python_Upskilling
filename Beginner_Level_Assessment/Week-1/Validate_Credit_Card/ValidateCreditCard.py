@@ -6,26 +6,19 @@
 ► It must NOT have 4 or more consecutive repeated digits.
 """
 import re
-
-
 class ShortLength(Exception):
     """does not match the card limit i.e. 16"""
     pass
-
 
 class ExceedsLength(Exception):
     """exceeds the card limit i.e. 16"""
     pass
 
-
 class RepeatedDigits(Exception):
     """it has 4 or more consecutive repeated digits"""
     pass
 
-
 """function to count occurrences of digits in card number"""
-
-
 def count_occurrence(card_no: str) -> bool:
     list_of_card_no = list(card_no.replace('-', ''))
     count = 1
@@ -47,8 +40,6 @@ def count_occurrence(card_no: str) -> bool:
 
 
 """function to validate card number with all the given conitions"""
-
-
 def validate_credit_card_num(num: str) -> str:
     try:
         if count_occurrence(num):
